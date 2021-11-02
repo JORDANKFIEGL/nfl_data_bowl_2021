@@ -116,14 +116,49 @@ plays_raw %>% describe()
 
 ### PFF Scouting
 
-```{r}
+```{r examine pff data}
 pff_raw %>% describe()
+```
+### Tracking Data
+
+Tracking data is too big to use describe(), so instead just goin to view column names to understand future joins.
+
+time: Time stamp of play (time, yyyy-mm-dd, hh:mm:ss)
+x: Player position along the long axis of the field, 0 - 120 yards. See Figure 1 below. (numeric)
+y: Player position along the short axis of the field, 0 - 53.3 yards. See Figure 1 below. (numeric)
+s: Speed in yards/second (numeric)
+a: Speed in yards/second^2 (numeric)
+dis: Distance traveled from prior time point, in yards (numeric)
+o: Player orientation (deg), 0 - 360 degrees (numeric)
+dir: Angle of player motion (deg), 0 - 360 degrees (numeric)
+event: Tagged play details, including moment of ball snap, pass release, pass catch, tackle, etc (text)
+nflId: Player identification number, unique across players (numeric)
+displayName: Player name (text)
+jerseyNumber: Jersey number of player (numeric)
+position: Player position group (text)
+team: Team (away or home) of corresponding player (text)
+frameId: Frame identifier for each play, starting at 1 (numeric)
+gameId: Game identifier, unique (numeric)
+playId: Play identifier, not unique across games (numeric)
+playDirection: Direction that the offense is moving (left or right)
+
+```{r examine 18 data}
+track18_raw %>% colnames()
 ```
 
 
+## Joining Datasets
 
 
 
+
+
+# Exploratory Data Analysis
+
+
+```{r}
+
+```
 
 
 
@@ -153,7 +188,7 @@ pff_raw %>% describe()
 
 ## Session Info
 
-```{r}
+```{r session info}
 sessioninfo::session_info()
 ```
 
